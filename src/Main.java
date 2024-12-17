@@ -8,8 +8,8 @@ public class Main {
 
         List<Employer> Departement = Arrays.asList(
                 new Employer(22,10,2500,"raquel"),
-                new Employer(35,15,10000,"mario"),
-                new Employer(35,9,2000,"henrique"),
+                new Employer(45,15,10000,"mario"),
+                new Employer(45,9,2000,"henrique"),
                 new Employer(24,9,5000,"joao"));
 
 
