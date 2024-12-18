@@ -24,9 +24,9 @@ public class Main {
 
     comparate.comparate(Department2);
     comparate.oldest(3);
-    comparate.workingYears();
+    comparate.workingYears(10);
     comparate.salary(2000);
-    comparate.first();
+    comparate.first(23);
     comparate.highestSalary();
 
 

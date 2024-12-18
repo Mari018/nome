@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.stream.Stream;
 
 public class DepartmentAnalyzer {
@@ -26,9 +27,9 @@ public class DepartmentAnalyzer {
         System.out.println("\n");
     }
 
-    public void workingYears(){
+    public void workingYears(int n){
         long workingYears1 = department.stream()
-                .filter(worker -> worker.getWorkingTime() >=10)
+                .filter(worker -> worker.getWorkingTime() >= n)
                 .count();
         System.out.println(workingYears1);
 
@@ -42,16 +43,17 @@ public class DepartmentAnalyzer {
         System.out.println("\n");
     }
 
-    public void first(){
-        Stream<Employer> first = department.stream().filter(worker -> worker.getAge() >23).findFirst().stream();
-        first.forEach(System.out::println);
+    public void first(int n){
+        Stream<Employer> first = department.stream();
+        first.filter(worker -> worker.getAge() > n).findFirst().stream().findFirst().ifPresent(w -> System.out.println(w.getName()));
 
         System.out.println("\n");
     }
 
     public void highestSalary(){
-        Stream<Employer> higherSalary = department.stream().max((w,w1) -> w.getSalary() - w1.getSalary()).stream();
-        higherSalary.forEach(System.out::println);
+
+       OptionalDouble average = department.stream().mapToInt(Employer::getSalary).average();
+        System.out.println(average);
 
         System.out.println("\n");
     }
