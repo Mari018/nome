@@ -13,7 +13,6 @@ public class Employer {
         this.salary = salary;
         this.name = name;
     }
-    public Employer(){}
 
     public int getAge() {
         return age;

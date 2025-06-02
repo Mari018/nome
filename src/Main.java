@@ -27,9 +27,7 @@ public class Main {
     comparate.workingYears(10);
     comparate.salary(2000);
     comparate.first(23);
-    comparate.highestSalary();
-
-
+    comparate.averageSalary();
 
 
     }

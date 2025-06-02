@@ -21,8 +21,8 @@ public class DepartmentAnalyzer {
     }
 
     public void oldest (int n){
-        department.stream().map(Employer::getAge).sorted().skip(department.size() - n).forEach(System.out::println);
-
+      Stream<Integer> d =  department.stream().map(Employer::getAge).sorted().skip(department.size() - n);
+      d.forEach(System.out::println);
 
         System.out.println("\n");
     }
@@ -50,7 +50,7 @@ public class DepartmentAnalyzer {
         System.out.println("\n");
     }
 
-    public void highestSalary(){
+    public void averageSalary(){
 
        OptionalDouble average = department.stream().mapToInt(Employer::getSalary).average();
         System.out.println(average);
